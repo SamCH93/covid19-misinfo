@@ -32,8 +32,10 @@ Loomba, S., de Figueiredo, A., Piatek, S.J. et al. Measuring the impact of COVID
 We attempted to reproduce the analyes in this paper at the [SwissRN
 ReproHack](https://www.reprohack.org/event/16/). We had to install some older
 versions of Python and Pystan, as it doesn't work with newer versions (for
-example, Pystan >= 3.0 is import as stan and not pystan). Also there seems to be
-a problem with pandas, we had to modify the code at 2 places. We tried to make a
+example, Pystan >= 3.0 is now imported as stan and not as pystan as in the paper). Also there seems to be
+a problem with pandas, we had to modify the code at 2 places. 
+
+We tried to make a
 reproducible environment using a Dockercontainer. When Docker with root rights
 is installed, the following command executed in a shell in the root directory of
 the repository should open a jupyter notebook which can be used to reproduce the
