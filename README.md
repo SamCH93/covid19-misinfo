@@ -26,3 +26,7 @@ These notebooks are intended to aid importing, transforming, and analysing the s
 
 ## Citation
 Loomba, S., de Figueiredo, A., Piatek, S.J. et al. Measuring the impact of COVID-19 vaccine misinformation on vaccination intent in the UK and USA. *Nat Hum Behav* (2021). https://doi.org/10.1038/s41562-021-01056-1
+
+# Reproduction attempt from the SwissRN ReproHack
+
+We attempted to reproduce the analyes in this paper at the (SwissRN ReproHack)[https://www.reprohack.org/event/16/]. We had to install some older versions of Python and Pystan, as it doesn't work with newer versions (for example, Pystan >= 3.0 is import as stan and not pystan). Also there seems to be a problem with pandas, we had to modify the code at 2 places. We tried to make a reproducible environment using a Dockercontainer.

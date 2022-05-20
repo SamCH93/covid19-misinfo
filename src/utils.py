@@ -908,7 +908,8 @@ def subset_df(df, atts, reset=False, save=''):
         if reset:
             out['index'] = subval
             out.set_index('index', verify_integrity=True, inplace=True)
-            del out.index.name
+            # del out.index.name
+            out = out.rename_axis(None, axis=0)
     else:
         if isinstance(df, pd.core.frame.DataFrame) and len(df.index[0])==len(atts[0]): out = pd.DataFrame.from_dict({att: df.loc[att] for att in atts}, orient='index')
         else: out = pd.concat({att: df.loc[att] for att in atts})

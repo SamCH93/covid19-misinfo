@@ -115,7 +115,8 @@ def image_impact(tables, kind='logOR'):
     def set_index(df, index):
         df['index'] = index
         df.set_index('index', verify_integrity=True, inplace=True)
-        del df.index.name
+        #del df.index.name
+        df = df.rename_axis(None, axis=0)
     for group in ['C', 'T']:
         stats[group] = combine_dfs(collapse_df(tables['UK']['image impact %s'%group]['stats'][kind]),
             collapse_df(tables['US']['image impact %s'%group]['stats'][kind]), lsuffix='UK', rsuffix='US', axis=1)
