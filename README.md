@@ -13,10 +13,10 @@ Peter was able to reproduce ca. 95% of the analysis on his local environment in 
 some MCMC sampling did not finish but we suspect that we would hav been successful if we had more time.
 I tried to create a Docker container which recreates the computational environment used in the original
 analysis. Assuming that Docker (with root rights) is installed, the Docker can be run by cloning this repository
-and running `make` from the root folder of the repository. Since we ran out of we time, we were not able 
-to test whether all analyses run successfully withing the Docker, but the first few MCMC 
+and running `make` from the root folder of the repository. Since we ran out of time, we were not able 
+to test whether all analyses reproduce successfully withing the Docker, but the first few MCMC 
 chunks did, and so did the tables (after the previously mentioned tweak of the Pandas code). A future step could
-be to indicate exactly which Pandas version was used in the original analysis, so that perhas the
+be to indicate exactly which Pandas version was used in the original analysis, so that perhaps the
 original code reproduces the original results.
 
 # Measuring the impact of COVID-19 vaccine misinformation on vaccination intent in the UK and USA
