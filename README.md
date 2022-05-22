@@ -1,3 +1,24 @@
+# Reproduction attempt from the SwissRN ReproHack (original description further below)
+
+We attempted to reproduce the analyes of the paper at the [SwissRN
+ReproHack](https://www.reprohack.org/event/16/), see our [review](https://www.reprohack.org/review/71/) for details.
+We were able to reproduce most analyses, but to get the analysis running we had to install some older
+versions of Python and PyStan, as it did not work with newer versions (for
+example, Pystan >= 3.0 is now imported with `import stan` and not with `import pystan`, 
+so all code using the old impot statement does not run anymore). While the paper reports the exact Python and
+PyStan versions used, it does not for the other dependencies. In particular, the code does not 100% work with the newest
+version of Pandas, so we had to modify the code at 2 places to get it running.
+
+Peter was able to reproduce ca. 95% of the analysis on his local environment in the time that we had,
+some MCMC sampling did not finish but we suspect that we would hav been successful if we had more time.
+I tried to create a Docker container which recreates the computational environment used in the original
+analysis. Assuming that Docker (with root rights) is installed, the Docker can be run by cloning this repository
+and running `make` from the root folder of the repository. Since we ran out of we time, we were not able 
+to test whether all analyses run successfully withing the Docker, but the first few MCMC 
+chunks did, and so did the tables (after the previously mentioned tweak of the Pandas code). A future step could
+be to indicate exactly which Pandas version was used in the original analysis, so that perhas the
+original code reproduces the original results.
+
 # Measuring the impact of COVID-19 vaccine misinformation on vaccination intent in the UK and USA
 *Sahil Loomba, Alexandre de Figueiredo, Simon Piatek, Kristen de Graaf, Heidi Larson*
 
@@ -26,22 +47,4 @@ These notebooks are intended to aid importing, transforming, and analysing the s
 
 ## Citation
 Loomba, S., de Figueiredo, A., Piatek, S.J. et al. Measuring the impact of COVID-19 vaccine misinformation on vaccination intent in the UK and USA. *Nat Hum Behav* (2021). https://doi.org/10.1038/s41562-021-01056-1
-
-# Reproduction attempt from the SwissRN ReproHack
-
-We attempted to reproduce the analyes in this paper at the [SwissRN
-ReproHack](https://www.reprohack.org/event/16/). We had to install some older
-versions of Python and Pystan, as it doesn't work with newer versions (for
-example, Pystan >= 3.0 is now imported as stan and not as pystan as in the paper). Also there seems to be
-a problem with pandas, we had to modify the code at 2 places. 
-
-We tried to make a
-reproducible environment using a Dockercontainer. When Docker with root rights
-is installed, the following command executed in a shell in the root directory of
-the repository should open a jupyter notebook which can be used to reproduce the
-results
-
-``` sh
-make
-```
 
