@@ -5,7 +5,7 @@ ReproHack](https://www.reprohack.org/event/16/), see our [review](https://www.re
 We were able to reproduce most analyses, but to get the analysis running we had to install some older
 versions of Python and PyStan, as it did not work with newer versions (for
 example, Pystan >= 3.0 is now imported with `import stan` and not with `import pystan`, 
-so all code using the old impot statement does not run anymore). While the paper reports the exact Python and
+so all code using the old import statement does not run anymore). While the paper reports the exact Python and
 PyStan versions used, it does not for the other dependencies. In particular, the code does not 100% work with the newest
 version of Pandas, so we had to modify the code at 2 places to get it running.
 
