@@ -9,11 +9,12 @@ so all code using the old import statement does not run anymore). While the pape
 PyStan versions used, it does not for the other dependencies. In particular, the code does not 100% work with the newest
 version of Pandas, so we had to modify the code at 2 places to get it running.
 
-Peter was able to reproduce ca. 95% of the analysis on his local environment in the time that we had,
-some MCMC sampling did not finish but we suspect that we would hav been successful if we had more time.
+Peter was able to reproduce ca. 95% of the analysis on his local environment in the time that we had. 
+Some MCMC sampling did not finish but we suspect that we would have been successful if we had more time.
 I tried to create a Docker container which recreates the computational environment used in the original
 analysis. Assuming that Docker (with root rights) is installed, the Docker can be run by cloning this repository
-and running `make` from the root folder of the repository. Since we ran out of time, we were not able 
+and running `make` from the root folder of the repository. This will launch an Jupyter Notebook inside the Docker
+which can be access by clicking on the link displayed in the terminal running the Docker. Since we ran out of time, we were not able 
 to test whether all analyses reproduce successfully withing the Docker, but the first few MCMC 
 chunks did, and so did the tables (after the previously mentioned tweak of the Pandas code). A future step could
 be to indicate exactly which Pandas version was used in the original analysis, so that perhaps the
